@@ -26,8 +26,8 @@ class CreateRolesTable extends Migration
 
     protected function setAppUserRoles()
     {
-        foreach (Role::ROLES as $userRole) {
-            (new Role(['role' => $userRole]))->save();
+        foreach (Role::ROLES as $DBrole => $userRole) {
+            (new Role(['role' => $DBrole]))->save();
         }
     }
 
